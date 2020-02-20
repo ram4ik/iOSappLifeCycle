@@ -10,7 +10,16 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, World!")
+        NavigationView {
+            VStack {
+                NavigationLink(destination: SecondaryView(), label: {
+                    Text("Show Secondary View")
+                }).padding()
+                Spacer()
+            }.navigationBarTitle("App Lifecycle")
+        }.onAppear() {
+            print("onAppear")
+        }
     }
 }
 
